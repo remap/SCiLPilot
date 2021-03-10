@@ -1,2 +1,8 @@
-# Virtual Production Shell App
-Shell app for the TH138 Virtual Production class.
+# Grasshopper
+
+TBD
+
+clone recursively 
+```
+git clone https://github.com/remap/SCiLPilot.git --recursive
+```
