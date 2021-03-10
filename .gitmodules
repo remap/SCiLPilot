@@ -1,0 +1,18 @@
+[submodule "Plugins/DDTools"]
+	path = Plugins/DDTools
+	url = https://github.com/remap/DDTools
+[submodule "Plugins/PlaybackCtrl"]
+	path = Plugins/PlaybackCtrl
+	url = https://github.com/remap/PlaybackCtrl.git
+[submodule "Plugins/UE4-OSC"]
+	path = Plugins/UE4-OSC
+	url = https://github.com/bsubbaraman/UE4-OSC
+[submodule "Plugins/WebCameraFeed"]
+	path = Plugins/WebCameraFeed
+	url = https://github.com/bakjos/WebCameraFeed.git
+[submodule "Plugins/VideoCore"]
+	path = Plugins/VideoCore
+	url = https://github.com/remap/VideoCore.git
+[submodule "Plugins/NDIIOPlugin"]
+	path = Plugins/NDIIOPlugin
+	url = https://github.com/remap/NDIIOPlugin.git
