@@ -16,3 +16,7 @@
 [submodule "Plugins/NDIIOPlugin"]
 	path = Plugins/NDIIOPlugin
 	url = https://github.com/remap/NDIIOPlugin.git
+[submodule "Plugins/socketio-client-ue4"]
+	path = Plugins/socketio-client-ue4
+	url = https://github.com/peetonn/socketio-client-ue4.git
+	branch = tls
