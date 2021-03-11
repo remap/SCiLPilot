@@ -4,15 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "LaInvencionGameMode.generated.h"
+#include "GrasshopperGameMode.generated.h"
 
 UCLASS(minimalapi)
-class ALaInvencionGameMode : public AGameModeBase
+class AGrasshopperGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
 public:
-	ALaInvencionGameMode();
+	AGrasshopperGameMode();
 };
 
 

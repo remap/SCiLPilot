@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
-#include "LaInvencionGameInstance.generated.h"
+#include "GrasshopperGameInstance.generated.h"
 
 UENUM(BlueprintType)
 enum ConnectionStatus
@@ -20,7 +20,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameInstanceConnectionStatusUpdate
  * 
  */
 UCLASS()
-class LAINVENCION_API ULaInvencionGameInstance : public UGameInstance
+class GRASSHOPPER_API UGrasshopperGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 	

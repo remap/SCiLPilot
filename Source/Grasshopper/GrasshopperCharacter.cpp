@@ -1,6 +1,6 @@
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
-#include "LaInvencionCharacter.h"
+#include "GrasshopperCharacter.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -10,9 +10,9 @@
 #include "GameFramework/SpringArmComponent.h"
 
 //////////////////////////////////////////////////////////////////////////
-// ALaInvencionCharacter
+// AGrasshopperCharacter
 
-ALaInvencionCharacter::ALaInvencionCharacter()
+AGrasshopperCharacter::AGrasshopperCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -50,61 +50,61 @@ ALaInvencionCharacter::ALaInvencionCharacter()
 //////////////////////////////////////////////////////////////////////////
 // Input
 
-void ALaInvencionCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+void AGrasshopperCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &ALaInvencionCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &ALaInvencionCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &AGrasshopperCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AGrasshopperCharacter::MoveRight);
 
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("TurnRate", this, &ALaInvencionCharacter::TurnAtRate);
+	PlayerInputComponent->BindAxis("TurnRate", this, &AGrasshopperCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("LookUpRate", this, &ALaInvencionCharacter::LookUpAtRate);
+	PlayerInputComponent->BindAxis("LookUpRate", this, &AGrasshopperCharacter::LookUpAtRate);
 
 	// handle touch devices
-	PlayerInputComponent->BindTouch(IE_Pressed, this, &ALaInvencionCharacter::TouchStarted);
-	PlayerInputComponent->BindTouch(IE_Released, this, &ALaInvencionCharacter::TouchStopped);
+	PlayerInputComponent->BindTouch(IE_Pressed, this, &AGrasshopperCharacter::TouchStarted);
+	PlayerInputComponent->BindTouch(IE_Released, this, &AGrasshopperCharacter::TouchStopped);
 
 	// VR headset functionality
-	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ALaInvencionCharacter::OnResetVR);
+	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AGrasshopperCharacter::OnResetVR);
 }
 
 
-void ALaInvencionCharacter::OnResetVR()
+void AGrasshopperCharacter::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
 
-void ALaInvencionCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
+void AGrasshopperCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
 		Jump();
 }
 
-void ALaInvencionCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
+void AGrasshopperCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
 {
 		StopJumping();
 }
 
-void ALaInvencionCharacter::TurnAtRate(float Rate)
+void AGrasshopperCharacter::TurnAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
-void ALaInvencionCharacter::LookUpAtRate(float Rate)
+void AGrasshopperCharacter::LookUpAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
-void ALaInvencionCharacter::MoveForward(float Value)
+void AGrasshopperCharacter::MoveForward(float Value)
 {
 	if ((Controller != NULL) && (Value != 0.0f))
 	{
@@ -118,7 +118,7 @@ void ALaInvencionCharacter::MoveForward(float Value)
 	}
 }
 
-void ALaInvencionCharacter::MoveRight(float Value)
+void AGrasshopperCharacter::MoveRight(float Value)
 {
 	if ( (Controller != NULL) && (Value != 0.0f) )
 	{

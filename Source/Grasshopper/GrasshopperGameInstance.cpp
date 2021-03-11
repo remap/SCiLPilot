@@ -1,24 +1,24 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "LaInvencionGameInstance.h"
+#include "GrasshopperGameInstance.h"
 #include "DDLog.h"
 #include "DDManager.h"
 
 ConnectionStatus
-ULaInvencionGameInstance::getConnectionStatus() const
+UGrasshopperGameInstance::getConnectionStatus() const
 {
     return connectionStatus_;
 }
 
 //void
-//ULaInvencionGameInstance::setConnectionStatus(ConnectionStatus status)
+//UGrasshopperGameInstance::setConnectionStatus(ConnectionStatus status)
 //{
 //    connectionStatus_ = status;
 //}
 
 bool
-ULaInvencionGameInstance::HandleOpenCommand(const TCHAR * Cmd, FOutputDevice & Ar, UWorld * InWorld)
+UGrasshopperGameInstance::HandleOpenCommand(const TCHAR * Cmd, FOutputDevice & Ar, UWorld * InWorld)
 {
     DLOG_TRACE("Open level command received");
     
@@ -34,7 +34,7 @@ ULaInvencionGameInstance::HandleOpenCommand(const TCHAR * Cmd, FOutputDevice & A
 }
 
 void
-ULaInvencionGameInstance::LoadComplete(const float LoadTime, const FString & MapName)
+UGrasshopperGameInstance::LoadComplete(const float LoadTime, const FString & MapName)
 {
     DLOG_TRACE("LoadComplete: time {} map name {}",
                LoadTime, TCHAR_TO_ANSI(*MapName));
@@ -69,7 +69,7 @@ ULaInvencionGameInstance::LoadComplete(const float LoadTime, const FString & Map
 }
 
 void
-ULaInvencionGameInstance::updateConnectionStatus(ConnectionStatus newStatus)
+UGrasshopperGameInstance::updateConnectionStatus(ConnectionStatus newStatus)
 {
     if (connectionStatus_ != newStatus)
     {

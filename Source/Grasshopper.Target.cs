@@ -3,11 +3,11 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class LaInvencionTarget : TargetRules
+public class GrasshopperTarget : TargetRules
 {
-	public LaInvencionTarget(TargetInfo Target) : base(Target)
+	public GrasshopperTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		ExtraModuleNames.Add("LaInvencion");
+		ExtraModuleNames.Add("Grasshopper");
 	}
 }

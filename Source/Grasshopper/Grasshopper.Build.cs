@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class LaInvencion : ModuleRules
+public class Grasshopper : ModuleRules
 {
-	public LaInvencion(ReadOnlyTargetRules Target) : base(Target)
+	public Grasshopper(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 

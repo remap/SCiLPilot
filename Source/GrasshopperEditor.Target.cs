@@ -3,11 +3,11 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class LaInvencionEditorTarget : TargetRules
+public class GrasshopperEditorTarget : TargetRules
 {
-	public LaInvencionEditorTarget(TargetInfo Target) : base(Target)
+	public GrasshopperEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-		ExtraModuleNames.Add("LaInvencion");
+		ExtraModuleNames.Add("Grasshopper");
 	}
 }

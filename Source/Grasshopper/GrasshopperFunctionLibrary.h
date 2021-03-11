@@ -6,13 +6,13 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Engine/Player.h"
 #include "GameFramework/Actor.h"
-#include "LaBlueprintFunctionLibrary.generated.h"
+#include "GrasshopperFunctionLibrary.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class LAINVENCION_API ULaBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
+class GRASSHOPPER_API UGrasshopperFunctionLibrary : public UBlueprintFunctionLibrary
 {
 	
 public:
