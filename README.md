@@ -2,9 +2,12 @@
 
 ## Description
 
-TBD
+_TBD_
+
 
 ## 🐿 Initial Setup 
+
+> ⚠️  **Use Engine Version 4.26**
 
 This repo uses a number of [third-party plugins](https://github.com/remap/SCiLPilot/tree/main/Plugins) (which in their turn rely on other plugins and third-party libraries). Here are steps for initial setup:
 
@@ -29,6 +32,7 @@ Since this repo will be used for building three distinct demo experiences, there
 * **TheaterTour**
 * **TheCityAndTheCity**
 * **Shell**
+* **XR Learning**
 
 ❗️ **All content, specific to either experience must be placed under corresponding folder**
 
