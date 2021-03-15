@@ -20,7 +20,7 @@ git clone https://github.com/remap/SCiLPilot.git --recursive
   * extract Zip archive into `Plugins/VideoCore/Source/ThirdParty` folder
     * after extraction the folder must contain only **three subfolders** with dependencies (`libmediasoupclient`, `libsdptransform` and `webrtc`)
 4. Generate Visual Studio solution by right-clicking on **Grasshopper.uproject** file and selecting _"Generate Visual Studio project files"_
-5. Compile Visual Studio solution by opening it and pressing **Ctrl + B**
+5. Compile Visual Studio solution by opening it and pressing **Ctrl + Shift + B**
 6. Open Grasshopper.uproject file. 
 
 ## Maps and Structure
