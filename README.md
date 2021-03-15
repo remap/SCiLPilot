@@ -7,9 +7,18 @@ _TBD_
 
 ## 🐿 Initial Setup 
 
-> ⚠️  **Use Engine Version 4.26**
-
 This repo uses a number of [third-party plugins](https://github.com/remap/SCiLPilot/tree/main/Plugins) (which in their turn rely on other plugins and third-party libraries). Here are steps for initial setup:
+
+### Prerequisites
+
+* **Unreal Engine 4.26**
+* **Visual Studio 2019**
+  * Make sure the following components are installed (use Visual Studio Installed -> Individual Components tab):
+    * _C++ ATL for latest v142 build tools (x86 & x64)_
+    * _C++ MFC for latest v142 build tools (x86 & x64)_
+    * _MSVC v142 - VS 2019 C++ x64/x86 build tools (v14.28)_
+
+### Setup steps
 
 1. Clone repo recursively
 ```
