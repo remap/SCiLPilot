@@ -76,3 +76,5 @@ Packaged
 
 git-describe.h
 WindowsNoEditor/*
+hooks/
+lfs/objects/
