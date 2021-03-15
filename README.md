@@ -2,11 +2,23 @@
 
 ## Description
 
-TBD
+_TBD_
+
 
 ## 🐿 Initial Setup 
 
 This repo uses a number of [third-party plugins](https://github.com/remap/SCiLPilot/tree/main/Plugins) (which in their turn rely on other plugins and third-party libraries). Here are steps for initial setup:
+
+### Prerequisites
+
+* **Unreal Engine 4.26**
+* **Visual Studio 2019**
+  * Make sure the following components are installed (use Visual Studio Installed -> Individual Components tab):
+    * _C++ ATL for latest v142 build tools (x86 & x64)_
+    * _C++ MFC for latest v142 build tools (x86 & x64)_
+    * _MSVC v142 - VS 2019 C++ x64/x86 build tools (v14.28)_
+
+### Setup steps
 
 1. Clone repo recursively
 ```
@@ -20,7 +32,7 @@ git clone https://github.com/remap/SCiLPilot.git --recursive
   * extract Zip archive into `Plugins/VideoCore/Source/ThirdParty` folder
     * after extraction the folder must contain only **three subfolders** with dependencies (`libmediasoupclient`, `libsdptransform` and `webrtc`)
 4. Generate Visual Studio solution by right-clicking on **Grasshopper.uproject** file and selecting _"Generate Visual Studio project files"_
-5. Compile Visual Studio solution by opening it and pressing **Ctrl + B**
+5. Compile Visual Studio solution by opening it and pressing **Ctrl + Shift + B**
 6. Open Grasshopper.uproject file. 
 
 ## Maps and Structure
@@ -29,6 +41,7 @@ Since this repo will be used for building three distinct demo experiences, there
 * **TheaterTour**
 * **TheCityAndTheCity**
 * **Shell**
+* **XR Learning**
 
 ❗️ **All content, specific to either experience must be placed under corresponding folder**
 
