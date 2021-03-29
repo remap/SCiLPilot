@@ -5,7 +5,7 @@
 			"app_key": "application.generated.ue.grasshopper-15228867.ue4editor.exe",
 			"launch_type": "url",
 			"url": "steam://launch/",
-			"action_manifest_path": "C:/Ben_Work/SCiLPilot/Config/SteamVRBindings/steamvr_manifest.json",
+			"action_manifest_path": "D:/Work/Unreal/SCiLPilot/Config/SteamVRBindings/steamvr_manifest.json",
 			"strings":
 			{
 				"en_us":

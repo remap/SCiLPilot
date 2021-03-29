@@ -52,11 +52,12 @@
 			"Enabled": true
 		},
 		{
-			"Name": "LiveLinkOverNDisplay",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64"
-			]
+			"Name": "VirtualCamera",
+			"Enabled": true
+		},
+		{
+			"Name": "PixelStreaming",
+			"Enabled": true
 		},
 		{
 			"Name": "nDisplay",
@@ -64,14 +65,6 @@
 			"SupportedTargetPlatforms": [
 				"Win64"
 			]
-		},
-		{
-			"Name": "VirtualCamera",
-			"Enabled": true
-		},
-		{
-			"Name": "PixelStreaming",
-			"Enabled": true
 		}
 	]
 }
