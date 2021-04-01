@@ -9,5 +9,8 @@ public class GrasshopperTarget : TargetRules
 	{
 		Type = TargetType.Game;
 		ExtraModuleNames.Add("Grasshopper");
+
+		bOverrideBuildEnvironment = true;
+		AdditionalLinkerArguments = "/FORCE:MULTIPLE";
 	}
 }
