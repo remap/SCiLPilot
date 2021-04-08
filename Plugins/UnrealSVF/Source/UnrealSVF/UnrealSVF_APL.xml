@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--GearVR plugin additions-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- init section is always evaluated once per architecture -->
+  <trace enable="true"/>
+  <init>
+    <log text="UnrealSVF init"/>
+    <setBool result="bSupported" value="false"/>
+    <isArch arch="armeabi-v7a">
+      <setBool result="bSupported" value="true"/>
+    </isArch>
+    <isArch arch="arm64-v8a">
+      <setBool result="bSupported" value="true"/>
+    </isArch>
+  </init>
+
+  <androidManifestUpdates>
+    <addElements tag="application">
+
+    <activity android:name="com.microsoft.mrcs.UnrealSVF"
+      android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+      android:label="@string/app_name" />
+    </addElements>
+  </androidManifestUpdates>
+
+  <!-- optional additions to proguard -->
+  <proguardAdditions>
+    <insert><![CDATA[
+      -keepattributes Signature
+      -dontskipnonpubliclibraryclassmembers
+      -keepclassmembers class com.epicgames.ue4.GameActivity {
+            public <methods>;
+            public <fields>;
+     }
+    ]]></insert>
+  </proguardAdditions>
+
+  <resourceCopies>
+    <!-- Copy the generated resource file to be packaged -->
+    <isArch arch="armeabi-v7a">
+      <log text="Copying ARMv7 libSVFUnityPlugin.so" />
+      <copyFile src="$S(PluginDir)/../../ThirdParty/ARM/libSVFUnityPlugin.so"
+        dst="$S(BuildDir)/libs/armeabi-v7a/libSVFUnityPlugin.so" />
+    </isArch>
+    <isArch arch="arm64-v8a">
+      <log text="Copying ARM64 libSVFUnityPlugin.so" />
+      <copyFile src="$S(PluginDir)/../../ThirdParty/ARM64/libSVFUnityPlugin.so"
+	      dst="$S(BuildDir)/libs/arm64-v8a/libSVFUnityPlugin.so" />
+    </isArch>
+  </resourceCopies>
+
+  <!-- Files to copy before the build so they can be used in the build -->
+  <prebuildCopies>
+    <isArch arch="armeabi-v7a">
+      <log text="Copying SVFUnityPlugin.jar" />
+      <copyDir src="$S(PluginDir)/../../ThirdParty/ARM/unreal_svf"
+        dst="$S(BuildDir)/JavaLibs/unreal_svf" />
+    </isArch>
+    <isArch arch="arm64-v8a">
+      <log text="Copying SVFUnityPlugin.jar" />
+      <copyDir src="$S(PluginDir)/../../ThirdParty/ARM/unreal_svf"
+        dst="$S(BuildDir)/JavaLibs/unreal_svf" />
+    </isArch>
+  </prebuildCopies>
+
+  <AARImports>
+  </AARImports>
+
+  <!-- optional additions to the GameActivity imports in GameActivity.java -->
+  <gameActivityImportAdditions>
+    <insert>
+      import java.util.HashSet;
+      import java.util.Arrays;
+      import android.text.TextUtils;
+      import android.graphics.BitmapFactory;
+      import android.os.Handler;
+      import android.widget.Toast;
+      import com.microsoft.mixedreality.mrcs.svf.JavaPlugin;
+    </insert>
+  </gameActivityImportAdditions>
+
+  <!-- optional additions to the GameActivity class in GameActivity.java -->
+  <gameActivityClassAdditions>
+    <insert>
+    <![CDATA[
+    JavaPlugin svfJavaPlugin;
+    public void AndroidThunkJava_AndroidAPI_ShowToast(String toastText) {
+            try
+            {
+                final String newToast = toastText;
+                _activity.runOnUiThread(new Runnable()
+                {
+                    public void run()
+                    {
+                      Toast.makeText(_activity.getApplicationContext(), newToast, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                Log.debug("Toast failed with exception " + e.getMessage());
+            }
+    }
+    ]]>
+    </insert>
+  </gameActivityClassAdditions>
+
+  <!-- optional additions to GameActivity onCreate metadata reading in GameActivity.java -->
+  <gameActivityReadMetadataAdditions>
+  <insert>
+
+  </insert>
+  </gameActivityReadMetadataAdditions>
+
+  <!-- optional additions to GameActivity onCreate in GameActivity.java -->
+  <gameActivityOnCreateAdditions>
+    <insert>
+    <![CDATA[
+        svfJavaPlugin = new JavaPlugin(this, true);
+    ]]>
+    </insert>
+  </gameActivityOnCreateAdditions>
+
+  <!-- optional additions to GameActivity onDestroy in GameActivity.java -->
+  <gameActivityOnDestroyAdditions>
+    <insert>
+    </insert>
+  </gameActivityOnDestroyAdditions>
+
+  <!-- optional additions to GameActivity onStart in GameActivity.java -->
+  <gameActivityOnStartAdditions>
+    <insert>
+    </insert>
+  </gameActivityOnStartAdditions>
+
+  <!-- optional additions to GameActivity onStop in GameActivity.java -->
+  <gameActivityOnStopAdditions>
+    <insert>
+    </insert>
+  </gameActivityOnStopAdditions>
+
+  <!-- optional additions to GameActivity onPause in GameActivity.java  -->
+  <gameActivityOnPauseAdditions>
+    <insert>
+    <![CDATA[
+    ]]>
+    </insert>
+  </gameActivityOnPauseAdditions>
+
+  <!-- optional additions to GameActivity onResume in GameActivity.java  -->
+  <gameActivityOnResumeAdditions>
+    <insert>
+    </insert>
+  </gameActivityOnResumeAdditions>
+
+  <!-- optional additions to GameActivity onActivityResult in GameActivity.java -->
+  <gameActivityOnActivityResultAdditions>
+    <insert>
+    </insert>
+  </gameActivityOnActivityResultAdditions>
+
+  <!-- optional libraries to load in GameActivity.java before libUE4.so -->
+  <soLoadLibrary>
+    <!-- need this if plugin enabled and supported architecture, even if not packaged for GearVR -->
+    <if condition="bSupported">
+      <true>
+        <loadLibrary name="SVFUnityPlugin" failmsg="Failed to load SVFUnityPluginso library" />
+      </true>
+    </if>
+  </soLoadLibrary>
+</root>
