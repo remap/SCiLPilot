@@ -36,6 +36,13 @@ git clone https://github.com/remap/SCiLPilot.git --recursive
 5. Compile Visual Studio solution by opening it and pressing **Ctrl + Shift + B**
 6. Open Grasshopper.uproject file. 
 
+
+## Update Project
+1. After pulling new commits 
+```
+git submodule update --recursive
+```
+
 ## Maps and Structure
 
 Since this repo will be used for building three distinct demo experiences, there are three main subfolders under the "Content" folder:
