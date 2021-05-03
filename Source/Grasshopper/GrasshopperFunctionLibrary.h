@@ -28,5 +28,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	static APlayerController* GetActorPlayerController(AActor* a);
 
+	UFUNCTION(BlueprintCallable)
+	static FString getCodeCommit();
+
+	UFUNCTION(BlueprintCallable)
+	static FString getGitDescribe();
+
+	UFUNCTION(BlueprintCallable)
+	static FString getCodeBranch();
+
 	GENERATED_BODY()
 };
