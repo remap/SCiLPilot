@@ -2,6 +2,7 @@
 
 
 #include "GrasshopperFunctionLibrary.h"
+#include "git-describe.h"
 
 AActor* UGrasshopperFunctionLibrary::getNetOwner(const AActor* a)
 {
@@ -36,4 +37,19 @@ APlayerController* UGrasshopperFunctionLibrary::GetActorPlayerController(AActor*
 	}
 		
 	return nullptr;
+}
+
+FString UGrasshopperFunctionLibrary::getCodeCommit()
+{
+	return FString(GIT_COMMIT);
+}
+
+FString UGrasshopperFunctionLibrary::getGitDescribe()
+{
+	return FString(GIT_DESCRIBE);
+}
+
+FString UGrasshopperFunctionLibrary::getCodeBranch()
+{
+	return FString(GIT_BRANCH);
 }
