@@ -1,0 +1,203 @@
+{
+	"nDisplay":
+	{
+		"description": "nDisplay configuration",
+		"version": "23",
+		"scene":
+		{
+			"xforms":
+			{
+				"stage_origin":
+				{
+					"parent": "",
+					"location":
+					{
+						"x": 0,
+						"y": 0,
+						"z": 0
+					},
+					"rotation":
+					{
+						"pitch": 0,
+						"yaw": 0,
+						"roll": 0
+					},
+					"trackerId": "",
+					"trackerChannel": -1
+				}
+			},
+			"cameras":
+			{
+				"camera_outer":
+				{
+					"interpupillaryDistance": 0.064000003039836884,
+					"swapEyes": false,
+					"stereoOffset": "none",
+					"parent": "socket_cam",
+					"location":
+					{
+						"x": 0,
+						"y": 0,
+						"z": 0
+					},
+					"rotation":
+					{
+						"pitch": 0,
+						"yaw": 0,
+						"roll": 0
+					},
+					"trackerId": "",
+					"trackerChannel": -1
+				},
+				"proj_camera1":
+				{
+					"interpupillaryDistance": 0.064000003039836884,
+					"swapEyes": false,
+					"stereoOffset": "none",
+					"parent": "rtt_inner",
+					"location":
+					{
+						"x": 0,
+						"y": 0,
+						"z": 0
+					},
+					"rotation":
+					{
+						"pitch": 0,
+						"yaw": 0,
+						"roll": 0
+					},
+					"trackerId": "",
+					"trackerChannel": -1
+				}
+			},
+			"screens":
+			{
+				"scr_1":
+				{
+					"size":
+					{
+						"width": 4.1999998092651367,
+						"height": 2.880000114440918
+					},
+					"parent": "display_2",
+					"location":
+					{
+						"x": 0,
+						"y": 0,
+						"z": 0
+					},
+					"rotation":
+					{
+						"pitch": 0,
+						"yaw": 0,
+						"roll": 0
+					},
+					"trackerId": "",
+					"trackerChannel": -1
+				}
+			},
+			"meshes":
+			{
+			}
+		},
+		"cluster":
+		{
+			"masterNode":
+			{
+				"id": "node_1",
+				"ports":
+				{
+					"ClusterSync": 41001,
+					"RenderSync": 41002,
+					"ClusterEventsJson": 41003,
+					"ClusterEventsBinary": 41004
+				}
+			},
+			"sync":
+			{
+				"renderSyncPolicy":
+				{
+					"type": "ethernet",
+					"parameters":
+					{
+					}
+				},
+				"inputSyncPolicy":
+				{
+					"type": "ReplicateMaster",
+					"parameters":
+					{
+					}
+				}
+			},
+			"network":
+			{
+				"ConnectRetriesAmount": "10",
+				"ConnectRetryDelay": "1000",
+				"GameStartBarrierTimeout": "30000",
+				"FrameStartBarrierTimeout": "5000",
+				"FrameEndBarrierTimeout": "5000",
+				"RenderSyncBarrierTimeout": "5000"
+			},
+			"nodes":
+			{
+				"node_1":
+				{
+					"host": "131.179.142.12",
+					"sound": false,
+					"fullScreen": true,
+					"window":
+					{
+						"x": 1920,
+						"y": 0,
+						"w": 1360,
+						"h": 768
+					},
+					"postprocess":
+					{
+					},
+					"viewports":
+					{
+						"vp_1":
+						{
+							"camera": "",
+							"bufferRatio": 1,
+							"gPUIndex": -1,
+							"allowCrossGPUTransfer": true,
+							"isShared": false,
+							"region":
+							{
+								"x": 0,
+								"y": 0,
+								"w": 1360,
+								"h": 768
+							},
+							"projectionPolicy":
+							{
+								"type": "picp_mesh",
+								"parameters":
+								{
+									"scale": "1"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"input":
+		{
+		},
+		"inputBindings": [],
+		"customParameters":
+		{
+		},
+		"diagnostics":
+		{
+			"simulateLag": false,
+			"minLagTime": 0,
+			"maxLagTime": 0.5
+		}
+	}
+}
