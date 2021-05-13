@@ -78,3 +78,5 @@ git-describe.h
 WindowsNoEditor/*
 hooks/
 lfs/objects/
+Content/Python/oscforwarder/pythonosc/__pycache__/
+Content/Python/oscforwarder/pythonosc/parsing/__pycache__/
