@@ -8,6 +8,8 @@
 #include "GameFramework/Actor.h"
 #include "GrasshopperFunctionLibrary.generated.h"
 
+DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(bool, FActorComparator, const AActor*, actorA, const AActor*, actorB);
+
 /**
  * 
  */
@@ -36,6 +38,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	static FString getCodeBranch();
+
+	UFUNCTION(BlueprintCallable)
+	static void sortObjectArray(const TArray<AActor*>& array, TArray<AActor*>& outArray, FActorComparator cmp);
 
 	GENERATED_BODY()
 };
