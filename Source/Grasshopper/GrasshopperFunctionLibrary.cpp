@@ -53,3 +53,11 @@ FString UGrasshopperFunctionLibrary::getCodeBranch()
 {
 	return FString(GIT_BRANCH);
 }
+
+void UGrasshopperFunctionLibrary::sortObjectArray(const TArray<AActor*>& array, TArray<AActor*>& outArray, FActorComparator cmp)
+{
+	outArray = array;
+	Algo::Sort(outArray, [cmp](auto o1, auto o2) {
+		return cmp.Execute(o1, o2);
+	});
+}
