@@ -40,7 +40,7 @@ public:
 	static FString getCodeBranch();
 
 	UFUNCTION(BlueprintCallable)
-	static void sortObjectArray(const TArray<AActor*>& array, TArray<AActor*>& outArray, FActorComparator cmp);
+	static void sortActorArray(const TArray<AActor*>& array, TArray<AActor*>& outArray, FActorComparator cmp);
 
 	GENERATED_BODY()
 };
