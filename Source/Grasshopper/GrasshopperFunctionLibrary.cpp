@@ -3,6 +3,7 @@
 
 #include "GrasshopperFunctionLibrary.h"
 #include "git-describe.h"
+#include "SceneView.h"
 
 AActor* UGrasshopperFunctionLibrary::getNetOwner(const AActor* a)
 {
@@ -54,10 +55,17 @@ FString UGrasshopperFunctionLibrary::getCodeBranch()
 	return FString(GIT_BRANCH);
 }
 
-void UGrasshopperFunctionLibrary::sortObjectArray(const TArray<AActor*>& array, TArray<AActor*>& outArray, FActorComparator cmp)
+void UGrasshopperFunctionLibrary::sortActorArray(const TArray<AActor*>& array, TArray<AActor*>& outArray, FActorComparator cmp)
 {
 	outArray = array;
 	Algo::Sort(outArray, [cmp](auto o1, auto o2) {
 		return cmp.Execute(o1, o2);
 	});
+}
+
+void UGrasshopperFunctionLibrary::deprojectWidgetToWorld(const FVector2D& widgetPos, const FVector2D& widgetSize,
+	const FMatrix& InvViewMatrix, const FMatrix& InvProjMatrix, FVector& worldOrigin, FVector& worldDirection)
+{
+	FIntRect viewRect(0, 0, (int32)widgetSize.X, (int32)widgetSize.Y);
+	FSceneView::DeprojectScreenToWorld(widgetPos, viewRect, InvViewMatrix, InvProjMatrix, worldOrigin, worldDirection);
 }

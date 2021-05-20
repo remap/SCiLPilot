@@ -40,7 +40,11 @@ public:
 	static FString getCodeBranch();
 
 	UFUNCTION(BlueprintCallable)
-	static void sortObjectArray(const TArray<AActor*>& array, TArray<AActor*>& outArray, FActorComparator cmp);
+	static void sortActorArray(const TArray<AActor*>& array, TArray<AActor*>& outArray, FActorComparator cmp);
+
+	UFUNCTION(BlueprintCallable)
+	static void deprojectWidgetToWorld(const FVector2D& widgetPos, const FVector2D& widgetSize,
+			const FMatrix& InvViewMatrix, const FMatrix& InvProjMatrix, FVector& worldOrigin, FVector& worldDirection);
 
 	GENERATED_BODY()
 };
