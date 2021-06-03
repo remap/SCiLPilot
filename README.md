@@ -29,7 +29,7 @@ git clone https://github.com/remap/SCiLPilot.git --recursive
  * 👀 may also install "NDI 4 Tools"
  * 🚫 don't download "NDIIOPlugin" -- it is already setup during recursive cloning of the repo
 3. Setup VideoCore plugin:
-  * download precompiled dependencies from [here](https://bintray.com/peetonn/grasshopper/videocore_bin/0.0.1-alpha/view/files#files/)
+  * download precompiled dependencies from [here](https://drive.google.com/file/d/1tlHjCcCoAone6NipH-PvHJsVCJmAlOD7/view?usp=sharing)
   * extract Zip archive into `Plugins/VideoCore/Source/ThirdParty` folder
     * after extraction the folder must contain only **three subfolders** with dependencies (`libmediasoupclient`, `libsdptransform` and `webrtc`)
 4. Generate Visual Studio solution by right-clicking on **Grasshopper.uproject** file and selecting _"Generate Visual Studio project files"_
